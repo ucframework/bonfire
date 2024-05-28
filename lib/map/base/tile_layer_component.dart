@@ -67,7 +67,7 @@ class TileLayerComponent extends PositionComponent with HasPaint {
     Vector2 screenSize, {
     bool force = false,
   }) {
-    if (_lastScreenSize == screenSize && !force) return;
+    if ((_lastScreenSize == screenSize && !force) || _tiles.isEmpty) return;
     _lastScreenSize = screenSize.clone();
     Vector2 treeSize = Vector2(
       mapSize.x / tileSize,
